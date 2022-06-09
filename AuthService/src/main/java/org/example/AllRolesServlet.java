@@ -33,16 +33,12 @@ public class AllRolesServlet extends HttpServlet {
             res.setCode(201);
             res.setMsg("params error");
         } else {
-            //
+            // get username
             String[] lst = token.split("\\$");
             byte[] base64decodedBytes1 = Base64.getDecoder().decode(lst[0]);
             String username = new String(base64decodedBytes1, "utf-8");
-            byte[] base64decodedBytes2 = Base64.getDecoder().decode(lst[1]);
-            Long timestamp = Long.parseLong(new String(base64decodedBytes2, "utf-8"));
-
             // check if token expired
-            Long elapse = System.currentTimeMillis() - timestamp;
-            if (elapse > 2 * 60 * 60 * 1000L) {
+            if (Utils.checkToken(token)) {
                 res.setCode(403);
                 res.setMsg("token expired!");
             }

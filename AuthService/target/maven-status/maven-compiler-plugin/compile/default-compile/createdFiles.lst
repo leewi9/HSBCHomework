@@ -1,12 +1,12 @@
 org\example\UserCreateServlet.class
-org\example\model\Res.class
 org\example\UserDeleteServlet.class
 org\example\model\User.class
 org\example\UserAddRoleServlet.class
 org\example\model\Role.class
+org\example\AuthenticateServlet.class
+org\example\model\Res.class
 org\example\RoleCreateServlet.class
 org\example\AllRolesServlet.class
 org\example\RoleCheckServlet.class
 org\example\RoleDeleteServlet.class
 org\example\InvalidateServlet.class
-org\example\AuthenticateServlet.class
